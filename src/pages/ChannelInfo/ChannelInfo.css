@@ -1,0 +1,52 @@
+.channelInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+.channel_banner_img{
+    height: 150px;
+}
+.channel_banner_img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.channelInfo img{
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+.channelInfo .info{
+    padding-left: 10px;
+    width: -webkit-fill-available;
+}
+.channelInfo .info h3{
+    font-size: 22px;
+    font-weight: 600;
+}
+.channelInfo .info p{
+    color: #aaa;
+}
+.subscribe_btn{
+    width: 110px;
+}
+.subscribe_btn button{
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    border-radius: 100px;
+}
+.channel_menu{
+    display: flex;
+    column-gap: 50px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #aaa;
+    font-weight: bold;
+    color: #aaa;
+}
+.channel_menu a{
+    text-decoration: none;
+    color: #aaa;
+}

@@ -1,0 +1,15 @@
+.channel_about{
+    padding: 30px 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.about_description{
+    padding-right: 60px;
+}
+.about_description h3{
+    margin-bottom: 20px;
+}
+.stats >*{
+    padding: 10px 0;
+    border-bottom: 1px solid #aaa;
+}

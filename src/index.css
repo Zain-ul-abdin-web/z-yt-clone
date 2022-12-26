@@ -1,5 +1,10 @@
-body {
+*{
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: .5s;
+}
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +15,64 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  background: #fff;
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #63377e;
+  border-radius: 12px;
+}
+:root{
+  --day-night-mode-background-color: black;
+  --day-night-mode-text-color: white;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+#root{
+  position: relative;
+}
+.page_container{
+  margin-top: 56px;
+  min-height: calc(100vh - 56px);
+  width: calc(100% - 240px);
+  position: absolute;
+  left: 240px;
+  background-color: var(--day-night-mode-background-color);
+  color: var(--day-night-mode-text-color);
+}
+.fetching{
+  text-align: center;
+  font-size: 25px;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+.fetching span{
+  display: inline-block;
+  animation-name: fetch;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  overflow: hidden;
+  word-wrap:normal;
+}
+.error{
+  text-align: center;
+  font-size: 25px;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+@media (max-width: 1030px){
+  .page_container{
+    width: 100% !important;
+    left: 0 !important
+  }
+  .top_topics{
+    width: 100% !important;
+    left: 0 !important
+  }
 }
