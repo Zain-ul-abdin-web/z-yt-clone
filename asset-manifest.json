@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/z-yt-clone.git.io/static/css/main.968fe075.css",
+    "main.js": "/z-yt-clone.git.io/static/js/main.9974acfd.js",
+    "static/media/youtube_logo.png": "/z-yt-clone.git.io/static/media/youtube_logo.782d146e1d47a0685c2c.png",
+    "index.html": "/z-yt-clone.git.io/index.html",
+    "main.968fe075.css.map": "/z-yt-clone.git.io/static/css/main.968fe075.css.map",
+    "main.9974acfd.js.map": "/z-yt-clone.git.io/static/js/main.9974acfd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.968fe075.css",
+    "static/js/main.9974acfd.js"
+  ]
+}
