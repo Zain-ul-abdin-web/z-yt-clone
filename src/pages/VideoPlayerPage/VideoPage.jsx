@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleNavbar } from '../../redux/youtubeSlice';
 
 const VideoPlayerPage = () => {
+  const [comshow, setComshow] = useState(false);
   const barShow = useSelector(store => store.youtubeSlice.toggleNavbar.barShow);
   const dispatch = useDispatch();
   let imgStyle = {
@@ -17,7 +18,7 @@ const VideoPlayerPage = () => {
     borderRadius: "100px"
   }
   let { id } = useParams();
-  let { data, isFetching, error } = useGetVideoInfoQuery(id);
+  let { data, isFetching} = useGetVideoInfoQuery(id);
   let { data: channelInfo } = useGetChannelInfoQuery(data?.videoDetails.channelId, { skip: data ? false : true });
   let { data: relatedVideos } = useGetRelatedVideosInfoQuery(data?.videoDetails.videoId, { skip: data ? false : true });
   const [videoDetails, setVideoDetails] = useState();
@@ -27,27 +28,17 @@ const VideoPlayerPage = () => {
     setVideoDetails("");
     setRlVideos("");
     setCnInfo("")
-    if (id == data?.videoDetails.videoId) {
+    if (id === data?.videoDetails.videoId) {
       setVideoDetails(data?.videoDetails);
       setRlVideos(relatedVideos);
       setCnInfo(channelInfo)
     }
   }, [id, data, channelInfo, relatedVideos]);
   useEffect(() => {
-    if (barShow == true) {
+    if (barShow === true) {
       dispatch(toggleNavbar(false))
     }
-
-    function success(pos) {
-      const crd = pos.coords;
-
-      console.log('Your current position is:');
-      console.log(`Latitude : ${crd.latitude}`);
-      console.log(`Longitude: ${crd.longitude}`);
-      console.log(`More or less ${crd.accuracy} meters.`);
-    }
-    navigator.geolocation.getCurrentPosition(success)
-  }, [])
+  },[])
   return (
     <div className='page_container video_page'>
       <div>
@@ -84,7 +75,8 @@ const VideoPlayerPage = () => {
               videoDetails ?
                 <>
                   <h5>{videoDetails?.viewCount} views</h5>
-                  <p>{videoDetails?.shortDescription}</p>
+                  <p className={comshow?"active":""}>{videoDetails?.shortDescription}</p>
+                  <span onClick={()=>setComshow(!comshow)}>show {comshow?"less":"more"}</span>
                 </> :
                 ""
             }
@@ -94,11 +86,12 @@ const VideoPlayerPage = () => {
           {
             isFetching ?
               <div className='fetching'>Loading <span>....</span></div> :
-              !rlVideos ?
-                <div className='error'>something went wrong</div> :
-                rlVideos.contents.map((video, i) => {
+              rlVideos ?
+              rlVideos.contents.map((video, i) => {
                   return <RelatedVideoCard video={video} key={i} />
-                })
+                }) :
+                <div className='error'>something went wrong</div>
+                
 
           }
         </div>

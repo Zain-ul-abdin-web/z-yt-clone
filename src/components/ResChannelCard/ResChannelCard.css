@@ -34,3 +34,16 @@
     color: #aaa;
     margin-top: 5px;
 }
+@media (max-width: 450px){
+    .sr_ch_card a img{
+        width: 70px;
+        height: 70px;
+    }
+    .sr_ch_card > div{
+        flex-direction: column;
+    }
+    .sr_ch_card button{
+        margin: 10px 0;
+        margin-right: auto;
+    }
+}

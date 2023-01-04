@@ -24,7 +24,7 @@ const ChannelInfo = () => {
         name = data.vanityChannelUrl
     }
   return (
-    <div className='page_container' style={homeStyles}>
+    <div className='channel page_container' style={homeStyles}>
         {
             isFetching && isFetchingContent ?
             <div className="fetching">
@@ -33,7 +33,7 @@ const ChannelInfo = () => {
             !(data && content)?
             <div className="error">Something went wrong</div>
             :
-            (
+            (data && content)?(
             <>
                 <div className="channel_banner_img">
                 <img src={data.avatar.thumbnails[0].url} style={{objectFit:"contain"}} alt="" />
@@ -69,7 +69,7 @@ const ChannelInfo = () => {
                             }
                     </div>)
                 }
-            </>)
+            </>):""
         }
     </div>
   )

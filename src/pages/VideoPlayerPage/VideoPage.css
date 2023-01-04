@@ -28,7 +28,7 @@
 .video_info_bar{
     display: grid;
     grid-template-columns: 50% 50%;
-    height: 50px;
+    min-height: 50px;
     align-items: center;
 }
 .channel_info{
@@ -77,9 +77,35 @@
     margin-top: 10px;
     text-align: left;
     word-break: break-word;
+    height: 60px;
+    overflow-y: hidden;
+    transition: height .5s;
+}
+.discription p.active{
+    height: auto;
+}
+.discription span{
+    text-decoration: underline;
+    margin-top: 5px;
+    cursor: pointer;
 }
 .related_video{
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+}
+@media (max-width: 950px){
+    .video_page > div {
+        grid-template-columns: 100%;
+    }
+}
+@media (max-width: 650px){
+    .video_info_bar{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-gap: 10px;
+    }
+    .video_rating{
+        justify-content: flex-start;
+    }
 }

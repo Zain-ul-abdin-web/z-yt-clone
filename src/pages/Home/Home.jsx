@@ -17,11 +17,11 @@ const Home = () => {
   const params = useParams();
   let type = "";
   if (params.type) {
-    if (params.type == "music") {
+    if (params.type === "music") {
       type = "mu"
-    } else if (params.type == "movies") {
+    } else if (params.type === "movies") {
       type = "mo"
-    } else if (params.type == "gaming") {
+    } else if (params.type === "gaming") {
       type = "g"
     }
   }
@@ -29,7 +29,7 @@ const Home = () => {
     <div className="fetching">
       Loading<span>....</span>
     </div>
-  )
+  );
   const { data, isFetching, error } = useGetTrendingVideosQuery(type ? type : "n");
   return (
     <>

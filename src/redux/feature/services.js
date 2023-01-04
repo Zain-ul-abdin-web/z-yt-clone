@@ -12,7 +12,7 @@ export const youtubeClone = createApi({
     }),
     endpoints: (builder) => ({
         getTrendingVideos: builder.query({
-            query: (type) => `/trending?type=${type}&hl=en&gl=PK`,
+            query: (type,country) => `/trending?type=${type}&hl=en&gl=PK`,
         }),
         getChannelContent: builder.query({
             query: (id)=> `/channel?id=${id}`

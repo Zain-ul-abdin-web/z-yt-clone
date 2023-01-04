@@ -21,4 +21,4 @@ const ChannelAbout = ({data}) => {
   )
 }
 
-export default ChannelAbout
+export default ChannelAbout;

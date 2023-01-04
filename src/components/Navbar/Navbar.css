@@ -5,6 +5,7 @@
     width: 240px;
     background-color: var(--day-night-mode-background-color);
     height: 100vh;
+    transition: .5s;
 }
 .navbar_head{
     position: absolute;

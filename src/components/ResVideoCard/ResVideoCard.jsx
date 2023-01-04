@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import "./ResVideoCard.css"
 
 const ResVideoCard = (props) => {
+    if(props.video.playlist)
+    return "";
     const video = props.video.video;
     let imgStyle = {
         width: "25px",

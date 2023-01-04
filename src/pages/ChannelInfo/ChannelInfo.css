@@ -1,8 +1,12 @@
+.channel{
+    transition: .5s;
+}
 .channelInfo{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    transition: .5s;
 }
 .channel_banner_img{
     height: 150px;
